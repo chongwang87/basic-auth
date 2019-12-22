@@ -1,6 +1,6 @@
 'use strict'
 
-var Resume = require('../models/resumeModel')
+var Resume = require('../models/resume')
 
 exports.create = function (req, res) {
 	var newResume = new Resume(req.body)

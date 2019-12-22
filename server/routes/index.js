@@ -1,10 +1,10 @@
 const { Router } = require('express'),
-	auth = require('../controllers/authController'),
-	resume = require('../controllers/resumeController'),
+	auth = require('../controllers/auth'),
+	resume = require('../controllers/resume'),
 	router = Router()
 
-router.post('/auth/signIn', auth.signIn)
 router.post('/auth/signUp', auth.signUp)
+router.post('/auth/signIn', auth.signIn)
 router.post('/auth/signOut/:token', auth.signOut)
 
 router.post('/uploadResumeDetails', resume.create)

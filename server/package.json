@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "start": "nodemon index.js localhost 3001"
+    "test": "jest --watch",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "faker": "^4.1.0",
     "meteor-random": "0.0.3",
     "mongoose": "^5.8.2",
     "sha256": "^0.2.0"
