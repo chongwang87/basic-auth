@@ -24,11 +24,18 @@ exports.signIn = async function (req, res) {
 	Account.findOne({
 		email : req.body.email
 	}, function (err, doc) {
-		var password = SHA256(req.body.password)
-		res.json({
-			err: (err || doc.services.password !== password) ? true : null,
-			data: (err || doc.services.password !== password) ? null : doc
-		})
+		if (err || (!err && doc) || !doc){
+			var password = SHA256(req.body.password)
+			res.json({
+				err: err || !doc || (!err && doc && doc.services && doc.services.password !== password),
+				data: null
+			})
+		} else {
+			res.json({
+				err : null,
+				data : doc
+			})
+		}
 	})
 }
 

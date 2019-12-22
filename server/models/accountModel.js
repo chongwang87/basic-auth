@@ -1,8 +1,5 @@
-'use strict'
-
-var mongoose = require('mongoose')
+var mongoose = require('../database')
 var Schema = mongoose.Schema
-
 
 var AccountSchema = new Schema({
 	services: {
