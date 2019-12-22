@@ -1,10 +1,16 @@
 version: '3'
 services:
   web:
-    build: .
+    build: ./app
     command: yarn start
     ports:
       - "3000:3000"
+    depends_on:
+      - mongo
+  server:
+    build: ./server
+    ports:
+      - "3001:3001"
     depends_on:
       - mongo
   mongo:
