@@ -11,7 +11,7 @@ import blue from '@material-ui/core/colors/blue'
 import red from '@material-ui/core/colors/red'
 
 import Account from '../Account'
-// import Employee from '../Employee'
+import Resume from '../Resume'
 
 export default function App() {
 	const theme = createMuiTheme({
@@ -31,9 +31,9 @@ export default function App() {
 							<Route exact path='/'>
 								<Account />
 							</Route>
-							{/* <Route path='/employee/:name'>
+							<Route path='/resume'>
 								<Resume />
-							</Route> */}
+							</Route>
 						</Switch>
 					</Container>
 				</SnackbarProvider>

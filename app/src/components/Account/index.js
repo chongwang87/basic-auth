@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSnackbar } from 'notistack'
+import { useHistory } from 'react-router-dom'
 
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
@@ -35,6 +36,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Account() {
 	const classes = useStyles(),
+		history = useHistory(),
 		{ enqueueSnackbar, closeSnackbar } = useSnackbar(),
 		[state, setState] = useState({ email :'', password:'' })
 	
@@ -65,6 +67,7 @@ export default function Account() {
 					global.localStorage.setItem('id', res.data._id)
 					global.localStorage.setItem('token', res.data.services.token)
 					enqueueSnackbar('You sign in successfully.', { variant: 'success' })
+					history.push('/resume')
 				}
 			})     
 	}
@@ -102,7 +105,6 @@ export default function Account() {
 	}
 	return (
 		<Container component="main" maxWidth="xs">
-			{ console.log(state) }
 			<div className={ classes.paper }>
 				<Avatar className={ classes.avatar }>
 					<LockOutlinedIcon />
