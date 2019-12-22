@@ -12,6 +12,7 @@ import red from '@material-ui/core/colors/red'
 
 import Account from '../Account'
 import Resume from '../Resume'
+import ResumeDetails from '../ResumeDetails'
 
 export default function App() {
 	const theme = createMuiTheme({
@@ -30,6 +31,9 @@ export default function App() {
 						<Switch>
 							<Route exact path='/'>
 								<Account />
+							</Route>
+							<Route path='/resume/:id'>
+								<ResumeDetails />
 							</Route>
 							<Route path='/resume'>
 								<Resume />

@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
 export default function Account() {
 	const classes = useStyles(),
 		history = useHistory(),
-		{ enqueueSnackbar, closeSnackbar } = useSnackbar(),
+		{ enqueueSnackbar } = useSnackbar(),
 		[state, setState] = useState({ email :'', password:'' })
 	
 	const handleChange = (e) => {
@@ -48,7 +48,7 @@ export default function Account() {
 	}
 	const handleSignIn = (e) => {
 		e.preventDefault()
-		fetch('http://localhost:3001/api/v1/auth/signIn', {
+		fetch('http://localhost:8080/api/v1/auth/signIn', {
 			method: 'POST',
 			headers: {
 				'Accept': 'application/json',
@@ -74,7 +74,7 @@ export default function Account() {
 
 	const handleSignUp = (e) => {
 		e.preventDefault()
-		fetch('http://localhost:3001/api/v1/auth/signUp', {
+		fetch('http://localhost:8080/api/v1/auth/signUp', {
 			method: 'POST',
 			headers: {
 				'Accept': 'application/json',
