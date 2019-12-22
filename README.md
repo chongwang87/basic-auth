@@ -1,5 +1,6 @@
 1. clone this repo
-2. `docker-compose up --build` to build and start `mongodb`
+2. to start **MongoDB server** (you may use your existing local MongoDB)
+3. run `docker-compose up --build`
 3. to start the **REST API server**, `cd` into `server` folder
 4. `npm install`
 5. `npm run start`
